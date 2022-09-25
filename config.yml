@@ -1,5 +1,7 @@
 genesis:
     app_state:
+      ysip:
+        minter: "ysip102xnfc6d5j8j7tshq3yrg0t7kr8tsd2y242ku0"
       bank:
         denom_metadata:
           - description: "The native token of ysip chain"
