@@ -20,6 +20,15 @@ export interface RpcStatus {
   details?: ProtobufAny[];
 }
 
+export enum YsipMintResult {
+  SUCCESS = "SUCCESS",
+  FAIL = "FAIL",
+}
+
+export interface YsipMsgMintCoinResponse {
+  result?: YsipMintResult;
+}
+
 /**
  * Params defines the parameters for the module.
  */
