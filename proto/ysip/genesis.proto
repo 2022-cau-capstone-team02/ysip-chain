@@ -1,0 +1,14 @@
+syntax = "proto3";
+package ysip.ysip;
+
+import "gogoproto/gogo.proto";
+import "ysip/params.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "ysip/x/ysip/types";
+
+// GenesisState defines the ysip module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  // this line is used by starport scaffolding # genesis/proto/state
+}
