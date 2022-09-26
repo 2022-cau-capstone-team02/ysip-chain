@@ -25,4 +25,19 @@ yspid keys list
 ysipd start
 ```
 
+## Send coin from validator to manager
+```shell
+ysipd tx bank send validator ysip102xnfc6d5j8j7tshq3yrg0t7kr8tsd2y242ku0 1000000ukrw -y
+```
+
+## Mint coin
+```shell
+ysipd tx ysip mintcoin 1000000ukrw ysip102xnfc6d5j8j7tshq3yrg0t7kr8tsd2y242ku0 --from genesis
+```
+
+## Burn coin
+```shell
+ysipd tx ysip burncoin 1000000ukrw ysip102xnfc6d5j8j7tshq3yrg0t7kr8tsd2y242ku0 --from genesis
+```
+
 
