@@ -7,8 +7,9 @@ option go_package = "ysip/x/ysip/types";
 
 // Msg defines the Msg service.
 service Msg {
-      rpc MintCoin(MsgMintCoin) returns (MsgMintCoinResponse);
-// this line is used by starport scaffolding # proto/tx/rpc
+  rpc MintCoin(MsgMintCoin) returns (MsgMintCoinResponse);
+  rpc BurnCoin(MsgBurnCoin) returns (MsgBurnCoinResponse);
+  // this line is used by starport scaffolding # proto/tx/rpc
 }
 
 message MsgMintCoin {
@@ -18,12 +19,22 @@ message MsgMintCoin {
 }
 
 message MsgMintCoinResponse {
-  MintResult result = 1;
+  Result result = 1;
 }
 
-enum MintResult {
+enum Result {
   SUCCESS = 0;
   FAIL = 1;
+}
+
+message MsgBurnCoin {
+  string creator = 1;
+  string amount = 2;
+  string owner = 3;
+}
+
+message MsgBurnCoinResponse {
+  Result result = 1;
 }
 
 // this line is used by starport scaffolding # proto/tx/message

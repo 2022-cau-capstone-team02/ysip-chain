@@ -20,13 +20,12 @@ export interface RpcStatus {
   details?: ProtobufAny[];
 }
 
-export enum YsipMintResult {
-  SUCCESS = "SUCCESS",
-  FAIL = "FAIL",
+export interface YsipMsgBurnCoinResponse {
+  result?: YsipResult;
 }
 
 export interface YsipMsgMintCoinResponse {
-  result?: YsipMintResult;
+  result?: YsipResult;
 }
 
 /**
@@ -40,6 +39,11 @@ export type YsipParams = object;
 export interface YsipQueryParamsResponse {
   /** params holds all the parameters of this module. */
   params?: YsipParams;
+}
+
+export enum YsipResult {
+  SUCCESS = "SUCCESS",
+  FAIL = "FAIL",
 }
 
 export type QueryParamsType = Record<string | number, any>;

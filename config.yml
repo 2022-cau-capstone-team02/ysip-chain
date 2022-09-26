@@ -5,40 +5,37 @@ genesis:
       bank:
         denom_metadata:
           - description: "The native token of ysip chain"
-            display: "krw"
+            display: "ukrw"
             base: "ukrw"
-            name: "KRW"
+            name: "microKRW"
             symbol: "KRW"
             denom_units:
               - denom: "ukrw"
                 exponent: "0"
-              - denom: "mkrw"
-                exponent: "3"
-              - denom: "krw"
-                exponent: "6"
           - description: "The native staked token of ysip chain"
-            display: "skrw"
+            display: "uskrw"
             base: "uskrw"
-            name: "stakedKRW"
+            name: "microStakedKRW"
             symbol: "sKRW"
             denom_units:
               - denom: "uskrw"
                 exponent: "0"
-              - denom: "mskrw"
-                exponent: "3"
-              - denom: "skrw"
-                exponent: "6"
       staking:
           params:
-            bond_denom: "skrw"
+            bond_denom: "uskrw"
 accounts:
   - name: validator
-    coins: ["1krw", "10000000skrw"]
+    coins: ["1000000ukrw", "1000000uskrw"]
 validator:
   name: validator
-  staked: "10000000skrw"
+  staked: "1000000uskrw"
 client:
   openapi:
     path: "docs/static/openapi.yml"
   vuex:
     path: "vue/src/store"
+
+init:
+  app:
+    minimum-gas-prices: "0ukrw"
+

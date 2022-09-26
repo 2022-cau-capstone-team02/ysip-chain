@@ -51812,12 +51812,15 @@ definitions:
     title: >-
       SignatureCounts contains information about signature reporting for a
       number of blocks
-  ysip.ysip.MintResult:
-    type: string
-    enum:
-      - SUCCESS
-      - FAIL
-    default: SUCCESS
+  ysip.ysip.MsgBurnCoinResponse:
+    type: object
+    properties:
+      result:
+        type: string
+        enum:
+          - SUCCESS
+          - FAIL
+        default: SUCCESS
   ysip.ysip.MsgMintCoinResponse:
     type: object
     properties:
@@ -51837,3 +51840,9 @@ definitions:
         description: params holds all the parameters of this module.
         type: object
     description: QueryParamsResponse is response type for the Query/Params RPC method.
+  ysip.ysip.Result:
+    type: string
+    enum:
+      - SUCCESS
+      - FAIL
+    default: SUCCESS

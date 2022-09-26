@@ -5,10 +5,12 @@ import { SigningStargateClient } from "@cosmjs/stargate";
 import { Registry, OfflineSigner, EncodeObject, DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
 import { Api } from "./rest";
 import { MsgMintCoin } from "./types/ysip/tx";
+import { MsgBurnCoin } from "./types/ysip/tx";
 
 
 const types = [
   ["/ysip.ysip.MsgMintCoin", MsgMintCoin],
+  ["/ysip.ysip.MsgBurnCoin", MsgBurnCoin],
   
 ];
 export const MissingWalletError = new Error("wallet is required");
@@ -42,6 +44,7 @@ const txClient = async (wallet: OfflineSigner, { addr: addr }: TxClientOptions =
   return {
     signAndBroadcast: (msgs: EncodeObject[], { fee, memo }: SignAndBroadcastOptions = {fee: defaultFee, memo: ""}) => client.signAndBroadcast(address, msgs, fee,memo),
     msgMintCoin: (data: MsgMintCoin): EncodeObject => ({ typeUrl: "/ysip.ysip.MsgMintCoin", value: MsgMintCoin.fromPartial( data ) }),
+    msgBurnCoin: (data: MsgBurnCoin): EncodeObject => ({ typeUrl: "/ysip.ysip.MsgBurnCoin", value: MsgBurnCoin.fromPartial( data ) }),
     
   };
 };
