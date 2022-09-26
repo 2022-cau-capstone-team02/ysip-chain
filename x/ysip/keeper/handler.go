@@ -63,6 +63,10 @@ func (k Keeper) Burn(ctx sdk.Context, burnMsg types.MsgBurnCoin) (types.Result, 
 		return types.Result_FAIL, err
 	}
 
+	if !owner.Equals(creator) {
+		return types.Result_FAIL, fmt.Errorf("only can burn coins from manager account")
+	}
+
 	if err := k.bankKeeper.SendCoinsFromAccountToModule(ctx, owner, types.ModuleName, sdk.NewCoins(coin)); err != nil {
 		return types.Result_FAIL, err
 	}
