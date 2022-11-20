@@ -27,10 +27,10 @@ genesis:
             bond_denom: "uskrw"
 accounts:
   - name: validator
-    coins: ["1000000ukrw"]
+    coins: ["1000000ukrw", "1000000uskrw"]
 validators:
   - name: validator
-    bonded: "1000000ukrw"
+    bonded: "1000000uskrw"
 client:
   openapi:
     path: "docs/static/openapi.yml"
