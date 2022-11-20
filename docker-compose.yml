@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+  ysip-chain:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - chain-volume:/root/.ysip/config
+      - chain-volume:/root/.ysip/data
+#      - chain-volume:/root/.ysip/keyring-test
+#      - chain-volume:/root/.ysip/wasm
+
+    ports:
+      - "26656:26656"
+      - "26657:26657"
+      - "1317:1317"
+
+    command:
+      - "sleep inf"
+#      - "ignite chain serve -v"
+
+volumes:
+  chain-volume:

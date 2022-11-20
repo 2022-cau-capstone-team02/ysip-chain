@@ -13,7 +13,7 @@ import (
 	"ysip/x/ysip/types"
 )
 
-// GetQueryCmd returns the cli query commands for this module
+// GetQueryCmd returns the ignite_cli query commands for this module
 func GetQueryCmd(queryRoute string) *cobra.Command {
 	// Group ysip queries under a subcommand
 	cmd := &cobra.Command{
