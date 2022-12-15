@@ -1,6 +1,9 @@
 # YSIP
 Youtube Share Investment Platform 
 
+## Prerequisite
+Make sure you have installed Golang, IgniteCli: https://docs.ignite.com/guide/install
+
 ## Init node
 Create files to build chains i.g) genesis.json, validator keys etc.
 ```shell
